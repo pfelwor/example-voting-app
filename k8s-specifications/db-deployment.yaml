@@ -23,6 +23,10 @@ spec:
           value: postgres
         - name: POSTGRES_PASSWORD
           value: postgres
+        - name: PGDATA
+          value: /var/lib/postgresql/data/pgdata
+        - name: POSTGRES_HOST_AUTH_METHOD
+          value: "trust"
         ports:
         - containerPort: 5432
           name: postgres
@@ -31,4 +35,6 @@ spec:
           name: db-data
       volumes:
       - name: db-data
+        persistentVolumeClaim:
+        claimName: "psql-vote"
         emptyDir: {} 
