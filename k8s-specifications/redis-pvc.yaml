@@ -1,7 +1,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: redis-data
+  name: redis-vote
   namespace: vote
 spec:
   accessModes:
