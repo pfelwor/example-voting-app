@@ -1,0 +1,15 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: vote
+  namespace: vote
+  labels:
+    app: vote
+spec:
+  to:
+    kind: Service
+    name: vote
+    weight: 100
+  port:
+    targetPort: vote-service
+  wildcardPolicy: None
